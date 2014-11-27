@@ -21,9 +21,9 @@ def test_read_file_01():
     tools.assert_equal(expected, result)
 
 
-@raises(FileNotFoundError)
+@raises(getattr(__builtins__, 'FileNotFoundError', IOError))
 def test_read_file_02():
     """
-    read_file()：引数に存在しないファイルを指定したとき、FileNotFoundErrorが送出されることを確認する。
+    read_file()：引数に存在しないファイルを指定したとき、FileNotFoundError(Python3.2のときはIOError)が送出されることを確認する。
     """
     detail.read_file('./toggl2html/tests/in/test_read_file_02.csv')
