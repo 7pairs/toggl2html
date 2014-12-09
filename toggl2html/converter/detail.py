@@ -1,6 +1,44 @@
 # -*- coding: utf-8 -*-
 
 
+# 生成するHTMLのテンプレート
+HTML_TEMPLATE = """\
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>詳細レポート: {{ start_date }} - {{ end_date }}</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <h1>詳細レポート: {{ start_date }} - {{ end_date }}</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>日付</th>
+                    <th>説明</th>
+                    <th>期間</th>
+                    <th>ユーザー</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for line in lines %}
+                    <tr>
+                        <td>{{ line.start_date }}</td>
+                        <td>{{ line.description }}<br>{{ line.client }} - {{ line.project }}</td>
+                        <td>{{ line.duration }}<br>{{ start_time }} - {{ end_time }}</td>
+                        <td>{{ line.user }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    </body>
+</html>
+"""
+
+
 def read_file(file_path):
     """
     ファイルを読み込み、内容を文字列として返す。
