@@ -70,3 +70,27 @@ def test_parse_csv_01():
         ちぃといつ,7pairs@gmail.com,第3領域,生活,,睡眠,いいえ,2014-06-23,00:00:00,2014-06-23,08:00:00,08:00:00,,
     """))
     tools.assert_equal(expected, result)
+
+
+def test_convert_snake_case_01():
+    """
+    convert_snake_case()：引数として指定された文字列がスネークケースに変換されることを確認する。
+    """
+    result = detail.convert_snake_case("cute and clever Elichika")
+    tools.assert_equal("cute_and_clever_elichika", result)
+
+
+def test_convert_snake_case_02():
+    """
+    convert_snake_case()：引数として指定された文字列が一単語の場合、すべて小文字に変換されることを確認する。
+    """
+    result = detail.convert_snake_case("Python")
+    tools.assert_equal("python", result)
+
+
+def test_convert_snake_case_03():
+    """
+    convert_snake_case()：引数として指定された文字列がすべて小文字で一単語の場合、変換後も同一の文字列であることを確認する。
+    """
+    result = detail.convert_snake_case("test")
+    tools.assert_equal("test", result)
