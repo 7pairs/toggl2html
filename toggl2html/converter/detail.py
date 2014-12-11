@@ -76,3 +76,16 @@ def parse_csv(csv):
 
     # 解析結果を返す
     return ret_val
+
+
+def convert_snake_case(target):
+    """
+    文字列をスネークケースに変換する。
+
+    :param target: 変換対象の文字列
+    :type target: str
+    :return: 変換後の文字列
+    :rtype: str
+    """
+    # 文字列をスネークケースに変換する
+    return target.lower().replace(' ', '_')
