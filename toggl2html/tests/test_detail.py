@@ -34,35 +34,35 @@ def test_parse_csv_01():
     parse_csv()：引数として渡したCSVが辞書の配列に変換されることを確認する。
     """
     expected = [{
-        'User': 'ちぃといつ',
-        'Email': '7pairs@gmail.com',
-        'Client': '第4領域',
-        'Project': '娯楽',
-        'Task': '',
-        'Description': 'クイズマジックアカデミー 天の学舎',
-        'Billable': 'いいえ',
-        'Start date': '2014-06-23',
-        'Start time': '10:00:00',
-        'End date': '2014-06-23',
-        'End time': '22:00:00',
-        'Duration': '12:00:00',
-        'Tags': '',
-        'Amount ()': ''
+        'user': 'ちぃといつ',
+        'email': '7pairs@gmail.com',
+        'client': '第4領域',
+        'project': '娯楽',
+        'task': '',
+        'description': 'クイズマジックアカデミー 天の学舎',
+        'billable': 'いいえ',
+        'start_date': '2014-06-23',
+        'start_time': '10:00:00',
+        'end_date': '2014-06-23',
+        'end_time': '22:00:00',
+        'duration': '12:00:00',
+        'tags': '',
+        'amount_()': ''
     }, {
-        'User': 'ちぃといつ',
-        'Email': '7pairs@gmail.com',
-        'Client': '第3領域',
-        'Project': '生活',
-        'Task': '',
-        'Description': '睡眠',
-        'Billable': 'いいえ',
-        'Start date': '2014-06-23',
-        'Start time': '00:00:00',
-        'End date': '2014-06-23',
-        'End time': '08:00:00',
-        'Duration': '08:00:00',
-        'Tags': '',
-        'Amount ()': ''
+        'user': 'ちぃといつ',
+        'email': '7pairs@gmail.com',
+        'client': '第3領域',
+        'project': '生活',
+        'task': '',
+        'description': '睡眠',
+        'billable': 'いいえ',
+        'start_date': '2014-06-23',
+        'start_time': '00:00:00',
+        'end_date': '2014-06-23',
+        'end_time': '08:00:00',
+        'duration': '08:00:00',
+        'tags': '',
+        'amount_()': ''
     }]
     result = detail.parse_csv(textwrap.dedent("""\
         User,Email,Client,Project,Task,Description,Billable,Start date,Start time,End date,End time,Duration,Tags,Amount ()
