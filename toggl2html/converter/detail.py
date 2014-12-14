@@ -72,7 +72,7 @@ def parse_csv(csv):
     # 明細行を解析する
     for line in lines[1:]:
         elements = line.split(',')
-        ret_val.append({captions[i]: element for i, element in enumerate(elements)})
+        ret_val.append({convert_snake_case(captions[i]): element for i, element in enumerate(elements)})
 
     # 解析結果を返す
     return ret_val
