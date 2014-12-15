@@ -47,22 +47,22 @@ def test_parse_csv_01():
         'end_time': '08:00:00',
         'duration': '08:00:00',
         'tags': '',
-        'amount_()': ''
+        'amount_()': '',
     }, {
-       'user': 'ちぃといつ',
-       'email': '7pairs@gmail.com',
-       'client': '第4領域',
-       'project': '娯楽',
-       'task': '',
-       'description': 'クイズマジックアカデミー 天の学舎',
-       'billable': 'いいえ',
-       'start_date': '2014-06-23',
-       'start_time': '10:00:00',
-       'end_date': '2014-06-23',
-       'end_time': '22:00:00',
-       'duration': '12:00:00',
-       'tags': '',
-       'amount_()': ''
+        'user': 'ちぃといつ',
+        'email': '7pairs@gmail.com',
+        'client': '第4領域',
+        'project': '娯楽',
+        'task': '',
+        'description': 'クイズマジックアカデミー 天の学舎',
+        'billable': 'いいえ',
+        'start_date': '2014-06-23',
+        'start_time': '10:00:00',
+        'end_date': '2014-06-23',
+        'end_time': '22:00:00',
+        'duration': '12:00:00',
+        'tags': '',
+        'amount_()': '',
     }]
     result = detail.parse_csv(textwrap.dedent("""\
         User,Email,Client,Project,Task,Description,Billable,Start date,Start time,End date,End time,Duration,Tags,Amount ()
