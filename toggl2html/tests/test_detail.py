@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import re
 import textwrap
 
 from nose import tools
@@ -76,7 +77,7 @@ def test_create_html_01():
     """
     create_html()：引数として渡した辞書の配列がHTMLに変換されることを確認する。
     """
-    expected = textwrap.dedent("""
+    expected = textwrap.dedent("""\
         <!DOCTYPE html>
         <html lang="ja">
             <head>
@@ -96,18 +97,21 @@ def test_create_html_01():
                         </tr>
                     </thead>
                     <tbody>
+
                             <tr>
                                 <td>2014-06-23</td>
                                 <td>睡眠<br>第3領域 - 生活</td>
                                 <td>08:00:00<br>00:00:00 - 08:00:00</td>
                                 <td>ちぃといつ</td>
                             </tr>
+
                             <tr>
                                 <td>2014-06-23</td>
                                 <td>クイズマジックアカデミー 天の学舎<br>第4領域 - 娯楽</td>
-                                <td>12:00:00<br>10:00 - 22:00:00</td>
+                                <td>12:00:00<br>10:00:00 - 22:00:00</td>
                                 <td>ちぃといつ</td>
                             </tr>
+
                     </tbody>
                 </table>
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -146,19 +150,19 @@ def test_create_html_01():
         'tags': '',
         'amount_()': '',
     }])
-    tools.assert_equal(expected, result)
+    tools.assert_equal(re.sub(r'[\s\n]', '', expected), re.sub(r'[\s\n]', '', result))
 
 
 def test_create_html_02():
     """
     create_html()：引数として渡した辞書の配列がHTMLに変換されることを確認する。
     """
-    expected = textwrap.dedent("""
+    expected = textwrap.dedent("""\
         <!DOCTYPE html>
         <html lang="ja">
             <head>
                 <meta charset="utf-8">
-                <title>詳細レポート: 2014-06-23 - 2014-06-24</title>
+                <title>詳細レポート: 2014-06-23 - 2014-06-25</title>
                 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
             </head>
             <body>
@@ -173,24 +177,28 @@ def test_create_html_02():
                         </tr>
                     </thead>
                     <tbody>
+
                             <tr>
                                 <td>2014-06-23</td>
                                 <td>睡眠<br>第3領域 - 生活</td>
                                 <td>08:00:00<br>00:00:00 - 08:00:00</td>
                                 <td>ちぃといつ</td>
                             </tr>
+
                             <tr>
                                 <td>2014-06-24</td>
                                 <td>クイズマジックアカデミー 天の学舎<br>第4領域 - 娯楽</td>
-                                <td>12:00:00<br>10:00 - 22:00:00</td>
+                                <td>12:00:00<br>10:00:00 - 22:00:00</td>
                                 <td>ちぃといつ</td>
                             </tr>
+
                             <tr>
                                 <td>2014-06-25</td>
                                 <td>toggl2html コーディング<br>第2領域 - GitHub</td>
-                                <td>03:00:00<br>22:00 - 01:00:00</td>
+                                <td>03:00:00<br>22:00:00 - 01:00:00</td>
                                 <td>ちぃといつ</td>
                             </tr>
+
                     </tbody>
                 </table>
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -244,7 +252,7 @@ def test_create_html_02():
         'tags': '',
         'amount_()': '',
     }])
-    tools.assert_equal(expected, result)
+    tools.assert_equal(re.sub(r'[\s\n]', '', expected), re.sub(r'[\s\n]', '', result))
 
 
 def test_convert_snake_case_01():
