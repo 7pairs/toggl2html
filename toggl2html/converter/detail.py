@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from jinja2 import Template
+
 
 # 生成するHTMLのテンプレート
 HTML_TEMPLATE = """\
@@ -26,7 +28,7 @@ HTML_TEMPLATE = """\
                     <tr>
                         <td>{{ line.start_date }}</td>
                         <td>{{ line.description }}<br>{{ line.client }} - {{ line.project }}</td>
-                        <td>{{ line.duration }}<br>{{ start_time }} - {{ end_time }}</td>
+                        <td>{{ line.duration }}<br>{{ line.start_time }} - {{ line.end_time }}</td>
                         <td>{{ line.user }}</td>
                     </tr>
                 {% endfor %}
@@ -76,6 +78,30 @@ def parse_csv(csv):
 
     # 解析結果を返す
     return ret_val
+
+
+def create_html(param):
+    """
+    タイムトラッキングの辞書の配列を解析し、その内容をHTMLとして返す。
+
+    :param param: CSV解析結果の辞書が格納された配列
+    :type param: List[Dict[str, str]]
+    :return: 解析結果のHTML
+    :rtype: str
+    """
+    # テンプレートを構築する
+    template = Template(HTML_TEMPLATE)
+
+    # 開始日／終了日を取得する
+    start_date = param[0]['start_date']
+    end_date = param[-1]['start_date']
+
+    # レンダリング結果を返す
+    return template.render({
+        'start_date': start_date,
+        'end_date': end_date,
+        'lines': param,
+    })
 
 
 def convert_snake_case(target):
