@@ -41,6 +41,23 @@ HTML_TEMPLATE = """\
 """
 
 
+def execute(in_file, out_file):
+    """
+    CSVファイルをHTMLに変換する。
+
+    :param in_file: CSVファイルのパス
+    :type in_file: str
+    :param out_file: HTMLのパス
+    :type out_file: str
+    """
+    # CSVファイルをHTMLに変換する
+    csv = read_file(in_file)
+    data = parse_csv(csv)
+    html = create_html(data)
+    with open(out_file, 'w') as f:
+        f.write(html)
+
+
 def read_file(file_path):
     """
     ファイルを読み込み、内容を文字列として返す。
