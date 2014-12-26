@@ -121,6 +121,19 @@ def create_html(param):
     })
 
 
+def save_file(file_path, data):
+    """
+    文字列をファイルに保存する。
+    :param file_path: ファイルパス
+    :type file_path: str
+    :param data: 保存する文字列
+    :type data: str
+    """
+    # 文字列をファイルに保存する
+    with open(file_path, 'a') as f:
+        f.write(data)
+
+
 def convert_snake_case(target):
     """
     文字列をスネークケースに変換する。

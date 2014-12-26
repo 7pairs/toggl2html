@@ -310,6 +310,23 @@ def test_create_html_02():
     assert_equal(re.sub(r'[\s\n]', '', expected), re.sub(r'[\s\n]', '', result))
 
 
+def test_save_file_01():
+    """
+    save_file()：引数に文字列とファイル名を指定したとき、文字列の内容をファイルに保存することを確認する。
+    """
+    data = textwrap.dedent("""\
+        保存する文字列アルよー。
+        これは2行目アルよー。
+    """)
+    detail.save_file('./toggl2html/tests/out/test_save_file_01.txt', data)
+
+    with open('./toggl2html/tests/out/test_save_file_01.txt') as f:
+        result = f.read()
+    assert_equal(data, result)
+
+    os.remove('./toggl2html/tests/out/test_save_file_01.txt')
+
+
 def test_convert_snake_case_01():
     """
     convert_snake_case()：引数として指定された文字列がスネークケースに変換されることを確認する。
