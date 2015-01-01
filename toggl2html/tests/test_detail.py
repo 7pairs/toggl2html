@@ -70,8 +70,8 @@ def test_read_file_01():
     """
     expected = textwrap.dedent("""\
         User,Email,Client,Project,Task,Description,Billable,Start date,Start time,End date,End time,Duration,Tags,Amount ()
-        ちぃといつ,7pairs@gmail.com,第4領域,娯楽,,クイズマジックアカデミー 天の学舎,いいえ,2014-06-23,10:00:00,2014-06-23,22:00:00,12:00:00,,
         ちぃといつ,7pairs@gmail.com,第3領域,生活,,睡眠,いいえ,2014-06-23,00:00:00,2014-06-23,08:00:00,08:00:00,,
+        ちぃといつ,7pairs@gmail.com,第4領域,娯楽,,クイズマジックアカデミー 天の学舎,いいえ,2014-06-23,10:00:00,2014-06-23,22:00:00,12:00:00,,
     """)
     result = detail.read_file('./toggl2html/tests/in/test_read_file_01.csv')
     assert_equal(expected, result)
@@ -122,8 +122,8 @@ def test_parse_csv_01():
     }]
     result = detail.parse_csv(textwrap.dedent("""\
         User,Email,Client,Project,Task,Description,Billable,Start date,Start time,End date,End time,Duration,Tags,Amount ()
-        ちぃといつ,7pairs@gmail.com,第4領域,娯楽,,クイズマジックアカデミー 天の学舎,いいえ,2014-06-23,10:00:00,2014-06-23,22:00:00,12:00:00,,
         ちぃといつ,7pairs@gmail.com,第3領域,生活,,睡眠,いいえ,2014-06-23,00:00:00,2014-06-23,08:00:00,08:00:00,,
+        ちぃといつ,7pairs@gmail.com,第4領域,娯楽,,クイズマジックアカデミー 天の学舎,いいえ,2014-06-23,10:00:00,2014-06-23,22:00:00,12:00:00,,
     """))
     assert_equal(expected, result)
 
