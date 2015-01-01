@@ -89,7 +89,7 @@ def parse_csv(csv):
     captions = lines[0].split(',')
 
     # 明細行を解析する
-    for line in reversed(lines[1:]):
+    for line in lines[1:]:
         elements = line.split(',')
         ret_val.append({convert_snake_case(captions[i]): element for i, element in enumerate(elements)})
 
