@@ -13,7 +13,7 @@ setup(
     author_email='7pairs@gmail.com',
     url='http://seven-pairs.hatenablog.jp/',
     packages=find_packages(),
-    install_requires=['Jinja2', 'docopt'],
+    install_requires=['Jinja2'],
     entry_points="""\
     [console_scripts]
     toggl2html = toggl2html.toggl2html:main
