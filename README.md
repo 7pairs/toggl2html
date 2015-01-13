@@ -1,7 +1,7 @@
 # toggl2html
 
 [![Build Status](https://travis-ci.org/7pairs/toggl2html.svg?branch=master)](https://travis-ci.org/7pairs/toggl2html)
-[![Coverage Status](https://coveralls.io/repos/7pairs/toggl2html/badge.png?branch=master)](https://coveralls.io/r/7pairs/toggl2html?branch=master)
+[![Coverage Status](https://img.shields.io/coveralls/7pairs/toggl2html.svg)](https://coveralls.io/r/7pairs/toggl2html?branch=master)
 
 ## 概要
 
