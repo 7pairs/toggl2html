@@ -53,5 +53,9 @@ docs/_build/
 # PyBuilder
 target/
 
+# pyenv
+.python-version
+
 # IntelliJ IDEA
 .idea
+toggl2html.iml
