@@ -1,15 +1,15 @@
 language: python
 
 python:
-    - 3.3
-    - 3.4
+  - 3.3
+  - 3.4
 
 install:
-    - pip install --use-mirrors -r requirements.txt
-    - pip install coveralls
+  - pip install --use-mirrors -r requirements.txt
+  - pip install coveralls
 
 script:
-    - nosetests --with-coverage --cover-package=toggl2html.converter
+  - nosetests --with-coverage --cover-package=toggl2html.converter
 
 after_success:
-    - coveralls
+  - coveralls
